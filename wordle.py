@@ -1,15 +1,19 @@
 # TASK A: Define a variable 'word' that holds the correct word for the wordle game
-
+word = "crown"
 
 # TASK B: Define a function 'makeAGuess()' that passes in a users guess as a parameter
-
-
-  # TASK C:Define a variable 'hint' that holds an empty string
- 
-
-  # TASK D: Build a loop that loops from 0 to the length of word
+def makeAGuess(guess):
   
 
+  # TASK C:Define a variable 'hint' that holds an empty string
+ hint = ""
+
+  # TASK D: Build a loop that loops from 0 to the length of word
+  for i in range(len(word)):
+    if guess[i] == word[i]:
+      hint += "g"
+    else:
+      continue
     # TASK E: Check if the current letter of guess matches the current letter of word. If so add the letter "G" to the hint
     
     
