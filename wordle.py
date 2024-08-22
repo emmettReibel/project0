@@ -25,14 +25,18 @@ def makeAGuess(guess):
     # TASK G: If the previous two conditions are false, add the symbol "-" to the hint
     
   # TASK H: Return hint
-guesslimit = 0
+guesses = 6
 # TASK I: Build a loop that loops 6 times (representing the number of guesses a user has)
-while guesslimit < 6:
-  ehint = makeAGuess(input(f"make a 5 letter guess! you have {str(6-guesslimit)} guesses left. ").upper())
+while guesses > 0:
+  ehint = makeAGuess(input(f"guess a 5 letter word! you have {str(guesses)} guesses left. ").upper())
+  if ehint == "GGGGG":
+    guesses = 0
+    print("You win! Congratulations.")
+    break
   print(ehint)
-  guesslimit += 1
-  if guesslimit == 6 and ehint != "GGGGG":
-    print("You lose! Try again.")
+  guesses -= 1
+  if guesses == 0 and ehint != "GGGGG":
+    print("You lose! The word was", word)
 
   # TASK J: Define a variable 'guess'. prompt the user for their 5-letter guess and store it in the variable
 
