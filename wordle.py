@@ -1,17 +1,23 @@
 # TASK A: Define a variable 'word' that holds the correct word for the wordle game
-
+word = "CROWN"
 
 # TASK B: Define a function 'makeAGuess()' that passes in a users guess as a parameter
-
-
-  # TASK C:Define a variable 'hint' that holds an empty string
- 
-
-  # TASK D: Build a loop that loops from 0 to the length of word
+def makeAGuess(guess):
   
 
+  # TASK C:Define a variable 'hint' that holds an empty string
+  hint = ""
+
+  # TASK D: Build a loop that loops from 0 to the length of word
+  for i in range(len(word)):
+    if guess[i] == word[i]:
+      hint += "G"
+    elif guess[i] in word:
+      hint += "Y"
+    else:
+      hint += "-"
+  return hint
     # TASK E: Check if the current letter of guess matches the current letter of word. If so add the letter "G" to the hint
-    
     
     # TASK F: If the previous condition is fales, check if the current letter of guess is in word at all. If so add the letter "Y" to the hint
     
@@ -19,13 +25,18 @@
     # TASK G: If the previous two conditions are false, add the symbol "-" to the hint
     
   # TASK H: Return hint
-  
-
-
-print("Let's play wordle! /n Guess the Wordle in 6 tries. Each guess must be a valid 5-letter word. For each guess, a hint will tell you how many letters you've guessed correctly. A G represents a letter in the word and in the correct spot.. A Y represents a letter in the word but in the wrong spot. A - represents a letter not in the word in any spot. \n Guess below! \n")
-
+guesses = 6
 # TASK I: Build a loop that loops 6 times (representing the number of guesses a user has)
-
+while guesses > 0:
+  ehint = makeAGuess(input(f"guess a 5 letter word! you have {str(guesses)} guesses left. ").upper())
+  if ehint == "GGGGG":
+    guesses = 0
+    print("You win! Congratulations.")
+    break
+  print(ehint)
+  guesses -= 1
+  if guesses == 0 and ehint != "GGGGG":
+    print("You lose! The word was", word)
 
   # TASK J: Define a variable 'guess'. prompt the user for their 5-letter guess and store it in the variable
 
