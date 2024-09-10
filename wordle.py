@@ -30,15 +30,15 @@ def playGame():
   guesses = 6
   # TASK I: Build a loop that loops 6 times (representing the number of guesses a user has)
   while guesses > 0:
-    ehint = makeAGuess(input(f"guess a 5 letter word! you have {str(guesses)} guesses left. ").upper())
+    ehint = makeAGuess(input(f"What are we trying to overthrow, newbie?! you have {str(guesses)} guesses left. ").upper())
     if ehint == "GGGGG":
       guesses = 0
-      print("You win! Congratulations.")
+      print("You've done it! Congratulations.")
       break
     print(ehint)
     guesses -= 1
     if guesses == 0 and ehint != "GGGGG":
-      print("You lose! The word was", word)
+      print("You failed our movement. Attempt again.")
   # TASK J: Define a variable 'guess'. prompt the user for their 5-letter guess and store it in the variable
 
   # TASK K: Define a variable 'hint' and set the return of makeAGuess(guess) to that variable

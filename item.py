@@ -6,7 +6,7 @@ class Item:
         
 # give player points for using item
     def use_item(self, player):
-        if type_of_item == "tea_crate":
+        if type_of_item == "tea_crate" and tea_crate in player.inventory:
             self.points = 5
         elif type_of_item == "strange bottle":
             self.points = 10
