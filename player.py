@@ -3,3 +3,5 @@ class Player:
         self.name = name
         self.health = health
         self.inventory = []
+
+#creates player object

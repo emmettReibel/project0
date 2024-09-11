@@ -4,10 +4,20 @@ from character import Character
 from wordle import makeAGuess
 from wordle import playGame
 
+
+#Prints a message about an interesting looking ship in the distance, then prompts the user to enter their name and creates a new Player object with the provided name and 100 health.
+
 print("What an interesting looking ship in the distance, with well dressed individuals surrounding it menacingly...")
 player_name = input("What is my name? ")
 player = Player(player_name, 100)
 
+
+
+#Prompts the user to decide whether to approach an interesting looking ship in the distance, and handles the user's decision.
+
+#If the user chooses to approach the ship, they are greeted by a character named Samuel, who is part of a covert operation. The user is then prompted to provide their name, and based on their response, either the character talks to the player or the character fights the player.
+
+#If the user chooses not to approach the ship, the player continues on their way to Boston. (this option does literally nothing)
 
 decision1 = input ("\nYou ponder whether or not you should approach the ship. Do you want to approach the ship? Y/N: ").upper() 
 if decision1 == "Y":
